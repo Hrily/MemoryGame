@@ -1,0 +1,225 @@
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Memory Game by Hrishi Hiraskar</title> 
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"> 
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+	    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+	    <script type="text/javascript" src="js/cordova.js"></script>
+	    <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/index1.js"></script>
+	</head> 
+	<body> 
+	
+	
+	  <div data-role="page" data-theme="b" id="index">
+
+		<div data-role="header">
+		  <h1>Memory Game</h1>
+		  <button onclick="window.close();" data-inline="true" class="ui-btn-right">Close</button>
+		</div>
+		<center><font size=2>By:- Hrishi Hiraskar</font>
+		  <div data-role="content" align="center">
+		    <center><br><br><img src="img/poster.jpg" border=2 style="border-color:gray;" width=330>
+			  <br><br><br><u><b>Play:</b></u><br>
+			  <a href="#classic" data-role="button" data-inline="true">Classic</a><br>
+		      <a href="#series" data-role="button" data-inline="true">Series</a>
+
+
+
+			</center>
+		  </div>
+		</center>
+		
+		<div data-role="footer" data-position="fixed"align="center">
+			<button onclick="$('#howtoplay').popup('open');" data-role="button" class="ui-btn-left">How to play</button>
+		  <h1>Memory Game v1.0</h1>
+			<button onclick="$('#about').popup('open');" data-role="#button" class="ui-btn-right">About Dev</button>
+		</div>
+		
+		<div data-role="popup" id="howtoplay" class="ui-content" data-transition="pop">
+		  <center><b><u><font size=5>How to play:</font></u></b></center><br>
+		  Memory Game is a simple puzzle type game in which player has to retype the string of numbers to win. 
+		  There are two different modes in this game:<br>
+		  <b><u>1. Classic:</u></b><br>
+		  In Classic mode, there are levels of strings. 
+		  In each level, a string of numbers is flashed and the player has to memorize it and retype it exactly the same and in same exact sequence. 
+		  The length of string increases with levels. 
+		  Win 10 strings to go to next level. 
+		  Player can play from level 1 or can choose any level he likes.<br>
+		  <b><u>2. Series</u></b>
+		  In Series mode, string lenght starts from 1 and gradually increases as the player retypes correctly. 
+		  The string numbers are same but a new number is added everytime. 
+		  The world record for this mode is about 99 numbers. 
+		  How long you can survive?<br>
+		  <a href="#" data-role="button" data-rel="back">OK</a>
+		  
+		</div>
+		
+		<div data-role="popup" id="about" class="ui-content" data-transition="pop">
+		  <center><b><u><font size=5>About Dev:</font></u></b><br><br>
+		  Memory Game v1.0<br>
+		  By - Hrishi Hiraskar<br>
+			<b><u>Contact:</u></b><br>
+			Email: hrishihiraskar@gmail.com<br>
+			Visit Dev: <br><a href="http://www.facebook.com/hrishi.hiraskar7">http://www.facebook.com/hrishi.hiraskar7</a><br><br>
+		  
+		  
+			<a href="#" data-role="button" data-rel="back">OK</a>
+		  </center>
+		</div>
+		
+	
+	  </div>
+	  
+	
+	
+	
+	
+	
+	
+	
+		<div data-role="page" data-theme="b" id="classic">
+
+			<div data-role="header">
+			  <a href="#index" class="ui-btn-left">Main Menu</a>
+			  <h1>Memory Game</h1>
+			  <button onclick="window.close();" data-inline="true" class="ui-btn-right">Close</button>
+			</div>
+		  <center><font size=2>By:- Hrishi Hiraskar</font><br><br>
+			<h1>Classic</h1><br>
+			<div data-role="content" align="center">
+			  <br>
+			  <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				<div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				 <button onclick="select_strng(1)" id="b1">1</button>
+				 <button onclick="select_strng(2)" id="b2">2</button>
+				 <button onclick="select_strng(3)" id="b3">3</button></div>
+			   <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				 <button onclick="select_strng(4)" id="b4">4</button>
+				 <button onclick="select_strng(5)" id="b5">5</button>
+				 <button onclick="select_strng(6)" id="b6">6</button></div>
+		 	   <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				 <button onclick="select_strng(7)" id="b7">7</button>
+				 <button onclick="select_strng(8)" id="b8">8</button>
+				 <button onclick="select_strng(9)" id="b9">9</button></div>
+			  </div></div></center>
+			  
+			  <div data-role="footer" data-position="fixed">
+				<div data-role="controlgroup" data-inline="true" align="center">
+				 
+				<select name="sel" data-icon="false" class="ui-btn-left" id="sel" data-inline="true" onchange="lvl=parseInt($('option:selected').val())">
+				  <option value="1">Level: 1</option>
+				  <option value="2">Level: 2</option>
+				  <option value="3">Level: 3</option>
+				  <option value="4">Level: 4</option>
+				  <option value="5">Level: 5</option>
+				  <option value="6">Level: 6</option>
+				  <option value="7">Level: 7</option>
+				  <option value="8">Level: 8</option>
+				  <option value="9">Level: 9</option>
+				  <option value="10">Level: 10</option>
+				  <option value="11">Level: 11</option>
+				  <option value="12">Level: 12</option>
+				  <option value="13">Level: 13</option>
+				  <option value="14">Level: 14</option>
+				  <option value="15">Level: 15</option>
+				  <option value="16">Level: 16</option>
+				  <option value="17">Level: 17</option>
+				  <option value="18">Level: 18</option>
+				  <option value="19">Level: 19</option>
+				  <option value="20">Level: 20</option>
+				  <option value="21">Level: 21</option>
+				  <option value="22">Level: 22</option>
+				  <option value="23">Level: 23</option>
+				  <option value="24">Level: 24</option>
+				  <option value="25">Level: 25</option>
+				  <option value="26">Level: 26</option>
+				  <option value="27">Level: 27</option>
+				  <option value="28">Level: 28</option>
+				  <option value="29">Level: 29</option>
+				  <option value="30">Level: 30</option>
+				</select>
+				  <center>Wins: <span id="winstat" data-inline="true">0</span>/10</center>
+				</div>
+				<div>
+				  <button onclick="stop_mains();" class="ui-btn-right">Stop</button>
+				
+				</div>
+			</div>
+			
+			<div data-role="popup" id="pup" class="ui-content" data-transition="pop" data-dismissible="false">
+			  <h2>Level Up !!!</h2>
+			  <a href="#" data-role="button" data-rel="back">Next Level</a>
+			</div>
+			
+		  <div data-role="popup" id="right" data-transition="pop">
+			<img src="img/right.gif" style="width:175px;">
+		  </div>
+		  <div data-role="popup" id="wrong" data-transition="pop">
+			<img src="img/wrong.gif" style="width:175px;">
+		  </div>
+			
+			  
+		  <center><span id="startbtn0"><button data-inline="true" onclick="mains();">Start</button></span></center>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+	  <div data-role="page" data-theme="b" id="series">
+
+		<div data-role="header">
+		  <a href="#index" class="ui-btn-left">Main Menu</a>
+		  <h1>Memory Game</h1>
+		  <button onclick="window.close();" data-inline="true" class="ui-btn-right">Close</button>
+		</div>
+		<center><font size=2>By:- Hrishi Hiraskar</font><br><br>
+		  <h1>Series</h1><br>
+		  <div data-role="content" align="center">
+			<br><br>
+			<div data-role="controlgroup" data-type="horizontal" data-inline="true">
+			  <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				<button onclick="sel_strng1(1)" id="b11">1</button>
+				<button onclick="sel_strng1(2)" id="b12">2</button>
+				<button onclick="sel_strng1(3)" id="b13">3</button></div>
+			  <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				<button onclick="sel_strng1(4)" id="b14">4</button>
+				<button onclick="sel_strng1(5)" id="b15">5</button>
+				<button onclick="sel_strng1(6)" id="b16">6</button></div>
+			  <div data-role="controlgroup" data-type="horizontal" data-inline="true">
+				<button onclick="sel_strng1(7)" id="b17">7</button>
+				<button onclick="sel_strng1(8)" id="b18">8</button>
+				<button onclick="sel_strng1(9)" id="b19">9</button></div>
+			</div></div></center>
+			
+		<center><span id="startbtn"><button onclick="main1();" data-inline="true">Start</button></span></center>
+
+		<div data-role="popup" id="right1" data-transition="pop">
+		  <img src="img/right.gif" style="width:175px;">
+		</div>
+		<div data-role="popup" id="wrong1" data-transition="pop">
+		  <img src="img/wrong.gif" style="width:175px;">
+		</div>
+		
+		
+		<div data-role="footer" data-position="fixed">
+		  <div data-role="controlgroup" data-type="horizontal" data-inline="true" align="center">
+		  <button id="stopbtn" onclick="stop_strng1();" data-inline="true" class="ui-btn-right">Stop</button>		  
+		  <center>Series level: <span id="serieslvl">1</span></center>
+		  </div>
+		</div>
+	  </div>
+	  
+
+		
+		
+
+        		
+	</body>
+</html>
